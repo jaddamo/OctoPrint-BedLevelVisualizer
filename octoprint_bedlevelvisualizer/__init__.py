@@ -211,8 +211,7 @@ class bedlevelvisualizer(
 	def flag_mesh_collection(self, comm_instance, phase, command, parameters, tags=None, *args, **kwargs):
 		if command == "BEDLEVELVISUALIZER":
 			if parameters:
-				self._bedlevelvisualizer_logger.debug(
-					"Timeout override: {}".format(parameters))
+				self._bedlevelvisualizer_logger.debug(f"Timeout override: {parameters}")
 				self._plugin_manager.send_plugin_message(
 					self._identifier, {"timeout_override": parameters})
 			thread = threading.Thread(target=self.enable_mesh_collection)
